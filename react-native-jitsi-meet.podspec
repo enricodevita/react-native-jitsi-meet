@@ -16,6 +16,6 @@ Pod::Spec.new do |s|
   s.source_files  = "ios/**/*.{h,m}"
 
   s.dependency 'React'
-  s.dependency 'JitsiMeetSDK', '2.8.1'
+  s.dependency 'JitsiMeetSDK', '2.9.0'
 end
   
