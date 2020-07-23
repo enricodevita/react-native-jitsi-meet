@@ -41,11 +41,11 @@ RCT_EXPORT_METHOD(call:(NSString *)urlString userInfo:(NSDictionary *)userInfo)
       }
     }
     dispatch_sync(dispatch_get_main_queue(), ^{
-        JitsiMeetConferenceOptions *options = [JitsiMeetConferenceOptions fromBuilder:^(JitsiMeetConferenceOptionsBuilder *builder) {        
+        JitsiMeetConferenceOptions *options = [JitsiMeetConferenceOptions fromBuilder:^(JitsiMeetConferenceOptionsBuilder *builder) {
             builder.room = urlString;
             builder.userInfo = _userInfo;
             [builder setFeatureFlag:@"add-people.enabled" withBoolean:NO];
-            [builder setFeatureFlag:@"chat.enabled" withBoolean:NO];
+            [builder setFeatureFlag:@"chat.enabled" withBoolean:YES];
             [builder setFeatureFlag:@"ios.recording.enabled" withBoolean:NO];
             [builder setFeatureFlag:@"live-streaming.enabled" withBoolean:NO];
             [builder setFeatureFlag:@"meeting-name.enabled" withBoolean:NO];
@@ -73,7 +73,7 @@ RCT_EXPORT_METHOD(audioCall:(NSString *)urlString userInfo:(NSDictionary *)userI
       }
     }
     dispatch_sync(dispatch_get_main_queue(), ^{
-        JitsiMeetConferenceOptions *options = [JitsiMeetConferenceOptions fromBuilder:^(JitsiMeetConferenceOptionsBuilder *builder) {        
+        JitsiMeetConferenceOptions *options = [JitsiMeetConferenceOptions fromBuilder:^(JitsiMeetConferenceOptionsBuilder *builder) {
             builder.room = urlString;
             builder.userInfo = _userInfo;
             builder.audioOnly = YES;
