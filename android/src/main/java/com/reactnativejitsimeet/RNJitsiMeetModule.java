@@ -58,7 +58,7 @@ public class RNJitsiMeetModule extends ReactContextBaseJavaModule {
                             .setAudioOnly(false)
                             .setUserInfo(_userInfo)
                             .setFeatureFlag("add-people.enabled", false)
-                            .setFeatureFlag("chat.enabled", false)
+                            .setFeatureFlag("chat.enabled", true)
                             .setFeatureFlag("live-streaming.enabled", false)
                             .setFeatureFlag("meeting-name.enabled", false)
                             .setFeatureFlag("meeting-password.enabled", false)
